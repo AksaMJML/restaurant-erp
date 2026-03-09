@@ -16,20 +16,22 @@ public class ItemRepositeryImpl implements ItemRepositery {
 
     @Override
     public boolean addItems(Items items) {
-        String sql = "INSERT INTO items VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO menu_items VALUES (?,?,?,?,?,?,?)";
         return jdbcTemplate.update(sql ,
                 items.getId(),
                 items.getName(),
-                items.getSize(),
-                items.getPrice(),
-                items.getPreperationTime(),
-                items.getIngredients()
+                items.getDescription(),
+                items.getCategory(),
+                items.isActive(),
+                items.getCreateAt(),
+                items.getUpdatedAt()
         )>0;
     }
 
     @Override
     public boolean updateItems(Items items) {
-        String sql = "UPDATE items SET "
+        String sql = "UPDATE menu_items SET item_name = ? , description = ? , category = ? , is_active = ? , created_at = ? , updated_at = ? WHERE menu_item_id = ?";
+      return false;
     }
 
     @Override

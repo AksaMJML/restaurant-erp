@@ -2,6 +2,8 @@ package edu.icet.model;
 
 import lombok.*;
 
+import java.sql.Timestamp;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -13,4 +15,6 @@ public class Items {
     private String description;
     private  String category;
     private boolean isActive;
+    private Timestamp createAt;
+    private Timestamp updatedAt;
 }
