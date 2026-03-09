@@ -31,7 +31,15 @@ public class ItemRepositeryImpl implements ItemRepositery {
     @Override
     public boolean updateItems(Items items) {
         String sql = "UPDATE menu_items SET item_name = ? , description = ? , category = ? , is_active = ? , created_at = ? , updated_at = ? WHERE menu_item_id = ?";
-      return false;
+        return jdbcTemplate.update(sql ,
+                items.getName(),
+                items.getDescription(),
+                items.getCategory(),
+                items.isActive(),
+                items.getCreateAt(),
+                items.getUpdatedAt(),
+                items.getId()
+        )>0;
     }
 
     @Override
