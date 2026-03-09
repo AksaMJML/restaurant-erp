@@ -25,12 +25,11 @@ public class ItemRepositeryImpl implements ItemRepositery {
                 items.getPreperationTime(),
                 items.getIngredients()
         )>0;
-
     }
 
     @Override
     public boolean updateItems(Items items) {
-        return false;
+        String sql = "UPDATE items SET "
     }
 
     @Override
