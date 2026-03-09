@@ -2,6 +2,7 @@ package edu.icet.controller;
 
 import edu.icet.model.Items;
 import edu.icet.service.ItemService;
+import io.swagger.v3.oas.models.security.SecurityScheme;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +26,11 @@ public class ItemController {
     @DeleteMapping("/delete-by-id/{id}")
     public boolean deleteById(@PathVariable Integer id){
         return service.deleteById(id);
+    }
+
+    @GetMapping("/search-by-id/{id}")
+    public Items searchById(@PathVariable Integer id){
+        return service.searchById(id);
     }
 
 }

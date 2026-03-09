@@ -30,7 +30,7 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public Items searchById(Integer id) {
-        return null;
+        return repositery.searchById(id);
     }
 
     @Override
