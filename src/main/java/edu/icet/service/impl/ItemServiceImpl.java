@@ -24,8 +24,8 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public boolean delteById(Integer id) {
-        return false;
+    public boolean deleteById(Integer id) {
+        return repositery.deleteById(id);
     }
 
     @Override

@@ -8,7 +8,7 @@ import java.util.List;
 public interface ItemService {
     boolean addItem(Items items);
     boolean updateItems(Items items);
-    boolean delteById(Integer id);
+    boolean deleteById(Integer id);
     Items searchById(Integer id);
     List<Items> getAll();
 }

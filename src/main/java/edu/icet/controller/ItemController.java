@@ -22,4 +22,9 @@ public class ItemController {
         return service.updateItems(items);
     }
 
+    @DeleteMapping("/delete-by-id/{id}")
+    public boolean deleteById(@PathVariable Integer id){
+        return service.deleteById(id);
+    }
+
 }
