@@ -64,6 +64,18 @@ public class ItemRepositeryImpl implements ItemRepositery {
 
     @Override
     public List<Items> getAll() {
-        return List.of();
+        String sql = "SELECT * FROM menu_items";
+        List<Items> itemsList = jdbcTemplate.query(sql , (rs, rowNum) -> {
+            Items items = new Items();
+            items.setId(rs.getInt(1));
+            items.setName(rs.getString(2));
+            items.setDescription(rs.getString(3));
+            items.setCategory(rs.getString(4));
+            items.setIsActive(rs.getInt(5));
+            items.setCreateAt(rs.getTimestamp(6));
+            items.setUpdatedAt(rs.getTimestamp(7));
+            return items;
+        });
+        return itemsList;
     }
 }
