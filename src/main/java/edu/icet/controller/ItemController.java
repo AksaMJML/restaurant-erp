@@ -17,4 +17,9 @@ public class ItemController {
         return service.addItem(items);
     }
 
+    @PutMapping("/update")
+    public boolean updateItems(@RequestBody Items items){
+        return service.updateItems(items);
+    }
+
 }

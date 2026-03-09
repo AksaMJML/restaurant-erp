@@ -14,7 +14,7 @@ public class Items {
     private String name;
     private String description;
     private  String category;
-    private boolean isActive;
+    private Integer isActive;
     private Timestamp createAt;
     private Timestamp updatedAt;
 }

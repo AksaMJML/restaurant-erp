@@ -22,7 +22,7 @@ public class ItemRepositeryImpl implements ItemRepositery {
                 items.getName(),
                 items.getDescription(),
                 items.getCategory(),
-                items.isActive(),
+                items.getIsActive(),
                 items.getCreateAt(),
                 items.getUpdatedAt()
         )>0;
@@ -35,7 +35,7 @@ public class ItemRepositeryImpl implements ItemRepositery {
                 items.getName(),
                 items.getDescription(),
                 items.getCategory(),
-                items.isActive(),
+                items.getIsActive(),
                 items.getCreateAt(),
                 items.getUpdatedAt(),
                 items.getId()
@@ -44,7 +44,8 @@ public class ItemRepositeryImpl implements ItemRepositery {
 
     @Override
     public boolean deleteById(Integer id) {
-        return false;
+        String sql = "DELETE FROM menu_items";
+        return jdbcTemplate.update(sql , id)>1;
     }
 
     @Override

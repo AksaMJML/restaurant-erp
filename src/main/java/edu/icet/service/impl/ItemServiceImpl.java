@@ -20,7 +20,7 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public boolean updateItems(Items items) {
-        return false;
+        return repositery.updateItems(items);
     }
 
     @Override
