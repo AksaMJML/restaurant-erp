@@ -6,6 +6,8 @@ import io.swagger.v3.oas.models.security.SecurityScheme;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/items")
 @RequiredArgsConstructor
@@ -31,6 +33,11 @@ public class ItemController {
     @GetMapping("/search-by-id/{id}")
     public Items searchById(@PathVariable Integer id){
         return service.searchById(id);
+    }
+
+    @GetMapping("/getAll")
+    public List<Items> getAll(){
+        return service.getAll();
     }
 
 }
