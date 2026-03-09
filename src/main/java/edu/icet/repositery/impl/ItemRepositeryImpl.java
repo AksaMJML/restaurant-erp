@@ -50,7 +50,16 @@ public class ItemRepositeryImpl implements ItemRepositery {
 
     @Override
     public Items searchById(Integer id) {
-        return null;
+        String sql = "SELECT * FROM menu_items WHERE menu_item_id = ?";
+        return jdbcTemplate.queryForObject(sql , (rs, rowNum) -> new Items(
+                rs.getInt(1),
+                rs.getString(2),
+                rs.getString(3),
+                rs.getString(4),
+                rs.getInt(5),
+                rs.getTimestamp(6),
+                rs.getTimestamp(7)
+                ), id);
     }
 
     @Override
