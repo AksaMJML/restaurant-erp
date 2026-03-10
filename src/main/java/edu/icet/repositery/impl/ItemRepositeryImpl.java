@@ -44,7 +44,7 @@ public class ItemRepositeryImpl implements ItemRepositery {
 
     @Override
     public boolean deleteById(Integer id) {
-        String sql = "DELETE FROM menu_items";
+        String sql = "DELETE FROM menu_items WHERE menu_item_id = ?";
         return jdbcTemplate.update(sql , id)>1;
     }
 
